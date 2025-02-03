@@ -4,13 +4,11 @@ ENV POETRY_NO_INTERACTION=1 \
     POETRY_VIRTUALENVS_CREATE=false \
     POETRY_VERSION=1.8.3
 
-RUN apt-get update && apt-get install -y \
-    curl \
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends curl \
     gcc \
     git \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip3 install "poetry==${POETRY_VERSION}"
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
