@@ -95,4 +95,4 @@ jobs:
           tags: fastapi-vanilla:latest
           cache-from: type=gha
       - name: Run Integration Tests
-        run: poetry run pytest tests/integration
+        run: docker run fastapi-vanilla:latest pytest tests/integration
