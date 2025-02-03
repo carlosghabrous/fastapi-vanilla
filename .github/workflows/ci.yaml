@@ -95,5 +95,4 @@ jobs:
           tags: fastapi-vanilla:latest
           cache-from: type=gha
       - name: Run Integration Tests
-        run: |
-          echo 'TODO: add integration tests'
+        run: poetry run pytest tests/integration
