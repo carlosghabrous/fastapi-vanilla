@@ -8,7 +8,8 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends curl \
     gcc \
     git \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    pip install "poetry==$POETRY_VERSION"
 
 WORKDIR /usr/src/app
 
