@@ -84,4 +84,3 @@ jobs:
   #     - name: Build Docker Image
   #       run: docker build -t fastapi-vanilla:latest .
   #     - name: Run Integration Tests
-  #       run: docker run fastapi-vanilla:latest "poetry install && poetry run python -m pytest tests/integration"
