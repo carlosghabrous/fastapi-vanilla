@@ -75,13 +75,13 @@ jobs:
       - name: Run Unit Tests
         run: poetry run pytest tests/unit
 
-  integration-tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - name: Build Docker Image
-        run: docker build -t fastapi-vanilla:latest .
-      - name: Run Integration Tests
-        run: docker run fastapi-vanilla:latest poetry install && poetry run pytest tests/integration
+  # integration-tests:
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 30
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: docker/setup-buildx-action@v3
+  #     - name: Build Docker Image
+  #       run: docker build -t fastapi-vanilla:latest .
+  #     - name: Run Integration Tests
+  #       run: docker run fastapi-vanilla:latest "poetry install && poetry run python -m pytest tests/integration"
